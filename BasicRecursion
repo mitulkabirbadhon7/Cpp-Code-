@@ -1,0 +1,65 @@
+#include <bits/stdc++.h>
+using namespace std;
+void solve(int n){ // print N to 1
+	
+	
+	if(n==1){
+		cout<<1<<"\n";
+		return ;
+	}
+	cout<<n<<" ";
+	solve(n-1);
+		
+}
+int fact(int n){ // Factorial of N
+	int factor = 1;
+	if(n == 0 || n == 1){
+		return 1;
+	}
+	return n *fact(n-1);
+	
+}
+int fibonacci(int n){ // Fibonacci value of Nth
+	
+	if(n == 0 || n == 1){
+		return n;
+	}
+	
+	return fibonacci(n-1) + fibonacci(n-2);
+}
+int sumOfN(int n){ // Sum Of N numbers
+	
+	if(n == 1){
+		return 1;
+	}
+	
+	return sumOfN(n-1) + n;
+}
+int digitsum(int n){ //Sum of N digits
+	
+	if(n == 0){
+		return 0;
+	}
+	
+	return digitsum(n / 10) + (n%10);
+	
+}
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int n ; 
+    cin >> n;
+    cout <<"N is : "<<n<<endl;
+	cout<<"From N to 1 : ";
+    solve(n);
+    
+    cout<<"factorial of N is : "<<fact(n)<<endl;
+    
+    cout<<"Fibonacci Of Nth is : "<<fibonacci(n)<<endl;
+    cout<<"Sum Of N is : " <<sumOfN(n)<<endl;
+    cout<<"Digit Sum Of N is : "<<digitsum(n)<<endl;
+    
+
+    return 0;
+}
